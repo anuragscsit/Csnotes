@@ -1,0 +1,30 @@
+<section style="background-image: url(<%= asset_path'home-2-4.jpg'%>);background-size: cover; ">
+  <div class="container">
+    <div class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2">
+      <div class="feature bordered ">
+        <h4 class="uppercase">Login Here</h4>
+
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="text-center">
+          <%= f.email_field :email, autofocus: true %>
+      
+          <%= f.password_field :password, autocomplete: "off" %>
+
+        <% if devise_mapping.rememberable? -%>
+        </div>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+        <% end -%>
+
+        <div class="actions">
+          <%= f.submit "Log in" %>
+        </div>
+        <% end %>
+
+        <%= render "users/shared/links" %>
+      </div>
+    </div>
+  </div>
+</section>
