@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require bootstrap
 //= require creative
+//= require SmoothScroll
 //= require jquery.magnific-popup
 //= require scrollreveal
 //= require_tree .

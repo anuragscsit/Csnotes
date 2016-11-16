@@ -6,7 +6,13 @@ class User < ActiveRecord::Base
 
   after_create :send_signup_mail
   
+  	has_one :profile
+
     def send_signup_mail
       UserMailer.signup_mail(self).deliver
-    end       
+    end      
+
+   #  def full_name
+   #  	"#{first_name} #{last_name}"
+  	# end 
 end
