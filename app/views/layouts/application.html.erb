@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Csnotes</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<title>Csnotes</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
-<%= render 'layouts/navbar'%> <!-- Navbar -->
+	<%= render 'layouts/navbar'%> <!-- Navbar -->
 
-	<div class="flash-notice">  <!-- Flash Massages -->
+	<div class="flash-notice text-center">  <!-- Flash Massages -->
 		<%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %>
 		<%= content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice] %>
 		<%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %>
 	</div>
+	<script type="text/javascript">
+		setTimeout(function() {
+			$('.flash-notice').slideUp('slow');
+	}, 10000); // <-- time in milliseconds
+
+
+</script>
 <%= yield %>
 <%= render 'layouts/footer'%>
 </body>

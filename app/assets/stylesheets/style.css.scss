@@ -5,6 +5,14 @@
 footer{
   background-color:#222;
 }
+.flash-notice{
+  font-size: 16px;
+  font-weight:600;
+  margin-top:50px;
+}
+#flash_alert{
+  color:#FF0505;
+}
 /***********LogIn Page***************/
 .login-section{
   background: asset_url('home-2-4.jpg');
