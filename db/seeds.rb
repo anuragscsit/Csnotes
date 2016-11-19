@@ -5,5 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-#branch = Branch.create([{ name: 'CSE' }, { name: 'ME' }])
-session = Session.create([{ year: '2015-16' }, { year: '2016-17' }])
+branch = Branch.create([{ name: 'CSE' }, { name: 'ME' }])
+#session = Session.create([{ year: '2015-16' }, { year: '2016-17' }])
