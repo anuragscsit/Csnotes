@@ -1,4 +1,4 @@
-<section class="bg-custom">
+<section class="bg-primary">
 	<h3 class="text-center">My profile</h3> 
 	<div class="section-edit">
 		<div class="container">
@@ -20,19 +20,19 @@
 					</div>
 					<% end %>						
 					<div class="row">
-						<div class="col-sm-3">
-							<ul>
-								<li class="btn" id="personal-details">Personal detils</li>
-								<li class="btn" id="banking-details">banking</li>
-								<li class="btn" id="employment-details">Occupation</li>
-								<li class="btn" id="emergency-details">Emergency</li>
-							</ul>
-						</div>
-						<div class="col-sm-6" id="tenant-profile-update">
+						<div class="col-sm-6">
 							<div class="personal-details">
 								<p class="lead">
 									Personal details
-								</p>								
+								</p>	
+								<div id="bio-textarea">
+									<label>First Name</label>
+									<%= f.text_field :first_name, maxlength: 25%>
+								</div>
+								<div id="bio-textarea">
+									<label>Last Name</label>
+									<%= f.text_field :last_name, maxlength: 20%>
+								</div>							
 								<div class="input-with-label text-left">
 									<label>Date of birth</label>
 									<%= f.text_field :DOB, placeholder: 'DOB' %>
@@ -52,68 +52,90 @@
 										</span>
 									</div>
 								</div>
-								
-								<div id="bio-textarea">
-									<label>Short bio</label>
-									<%= f.text_field :father_name, maxlength: 140%>
-									<p>Characters remaining: <span class='status'></span></p>
+							</div>	
+							<div id="bio-textarea">
+									<label>Father Name</label>
+									<%= f.text_field :father_name, maxlength: 60, placeholder: 'Father Name'%>
 								</div> 
+								<div id="bio-textarea">
+									<label>Father Mobile No.</label>
+									<%= f.text_field :father_mobile_no, maxlength: 10, placeholder: 'Father Mobile No.'%>
+								</div> 
+						</div>
+						<div class="col-sm-6" id="tenant-profile-update">
+							
+							<div class="acadmic-details">		
+								<p class="lead">
+									Acadmic details
+								</p>								
+								
+								<div>
+									<label>Branch</label>
+									<div class="select-option">
+										<%=f.select :branch, options_for_select(@branch.all.collect {|c| [ c.name, c.name ] })%>
+									</div>
+								</div>
+								<div>
+									<label>Session</label>
+									<div class="select-option">
+										<%=f.select :session, options_for_select(@session.all.collect {|c| [ c.year, c.year ] })%>
+									</div>
+								</div>
+								<div class="input-with-label text-left">
+									<label>Eroll no</label>
+									<%= f.text_field :eroll_no, placeholder: 'Eroll no', maxlength: 12 %>
+								</div>
+								<div class="input-with-label text-left">
+									<label>Mobile no</label>
+									<%= f.text_field :mobile_no, placeholder: 'Mobile no', maxlength: 10 %>
+								</div>
+
+
+							</div>
+							<div>
+								
 								<div>
 									<label>Permanent Address</label>
-									<%= f.text_field :p_address, placeholder: 'Address line 1' %>
+									<%= f.text_field :p_address, placeholder: 'Address line 1', maxlength: 30 %>
+									<!-- <p>Characters remaining: <span class='status'></span></p> -->
+								</div> 
+								<div class="input-with-label text-left">
+									<label>City</label>
+									<%= f.text_field :p_pincode, placeholder: 'City' %>
+								</div> 
+								<div class="input-with-label text-left">
+									<label>State</label>
+									<%= f.text_field :p_pincode, placeholder: 'State' %>
 								</div>  
 								
 								<div class="input-with-label text-left">
 									<label>Pin code</label>
 									<%= f.text_field :p_pincode, placeholder: 'pincode' %>
 								</div> 
-								
-								
-								<!--end select-->				
-							</div>	
-							<div class="banking-details">		
-								<p class="lead">
-									banking details
-								</p>								
-								<div class="input-with-label text-left">
-									<label>account holder</label>
-									<%= f.text_field :mobile_no, placeholder: 'account holder' %>
-								</div>
-								<div class="input-with-label text-left">
-									<label>account number</label>
-									<%= f.text_field :father_mobile_no, placeholder: 'account number' %>
-								</div>
-								<div class="input-with-label text-left">
-									<label>bank name</label>
-									<%= f.text_field :branch, placeholder: 'bank name' %>
-								</div>
-								<div class="input-with-label text-left">
-									<label>ifsc code</label>
-									<%= f.text_field :session, placeholder: 'ifsc code' %>
-								</div>
-								
-					
+								<div>
+									<label>Current Address</label>
+									<%= f.text_field :p_address, placeholder: 'Current Address' %>
+								</div> 
 							</div>
-							
-							<div class="employment-details">
-									<p class="lead">occupation</p>
-									<div class="input-with-label text-left">
-										<label>Occupation</label>
-										<%= f.text_field :eroll_no, placeholder: 'occupation' %>
-									</div>
-									
-							</div>							
-						</div>	
-						<div class="col-sm-4 col-sm-offset-4"><input value="Submit Button" type="submit"></div>
-					</div>
-					<% end %>
+
+							<!--end select-->				
+						</div>								
+					</div>	
 				</div>
+				<div class="col-sm-4 col-sm-offset-4 "><input value="Submit" type="submit" class="btn btn-primary btn-xl"></div>
+
+				<% end %>
 			</div>
 		</div>
-		<%#= link_to 'View Profile',   tenant_profile_path(id:profile.id)%>
-	</section>		
-	
-
+	</div>
+	<%#= link_to 'View Profile',   tenant_profile_path(id:profile.id)%>
+</section>		
+<script type="text/javascript">
+	$('#profile_DOB').datepicker({
+    	dateFormat: 'dd-mm-yy'
+	});
+	$('#profile_p_address').show_char_limit({ status_element: '.status', status_style: 'chars_left' } );
+</script>
 
 
 	<!-- <div class="mb24">

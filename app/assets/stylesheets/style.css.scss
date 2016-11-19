@@ -15,19 +15,22 @@ footer{
 }
 /***********LogIn Page***************/
 .login-section{
-  background: asset_url('home-2-4.jpg');
+  background: asset_url('home-2-6.jpg');
   background-size: cover;
 }
 
-.new_user input[type="text"],.new_user input[type="password"],.new_user input[type="email"],.new_user input[type="file"],#new_house_owner input[type="number"] {
+input[type="text"],input[type="password"],input[type="email"], input[type="file"],input[type="number"] {
   background: #f5f5f5 none repeat scroll 0 0;
-  border: 1px #eee solid;
+  border: 1px #ccc solid;
   border-radius: 0;
   font-weight: 500;
-  height: 40px ;
-  margin-bottom: 10px;
+  font-size:15px;
+  margin-bottom: 15px;
   padding-left: 20px;
   width: 100%;
+  color: #000;
+  border-radius: 0;
+  height: 45px;
 }
 .feature.bordered {
   padding: 32px;
@@ -45,4 +48,28 @@ footer{
 }
 .signup-btn,.login-btn{
   width:100%;
+  color:#000;
+}
+.signup-btn:hover,.login-btn:hover{
+  
+  color:#565;
+}
+
+/**********************************/
+.select-option {
+    cursor: pointer;
+    
+    margin-bottom: 15px;
+    overflow: hidden;
+    position: relative;
+}
+select {
+    color: #777;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+     height: 45px;
+     width: 100%;
 }
