@@ -40,30 +40,23 @@
 								<div class="row">
 									<div class="col-sm-12">
 										<h5>Gender</h5>
-										<span class="radio">
+										<div class="col-sm-6">
+											<span class="radio">
 											<label for="sex">
 												<%= f.radio_button :sex, true%>Male
 											</label>
 										</span>
+										</div>
+										<div class="col-sm-6">
 										<span class="radio">
 											<label for="sex">
 												<%= f.radio_button :sex, false%>Female
 											</label>
 										</span>
+										</div>
 									</div>
 								</div>
 							</div>	
-							<div id="bio-textarea">
-									<label>Father Name</label>
-									<%= f.text_field :father_name, maxlength: 60, placeholder: 'Father Name'%>
-								</div> 
-								<div id="bio-textarea">
-									<label>Father Mobile No.</label>
-									<%= f.text_field :father_mobile_no, maxlength: 10, placeholder: 'Father Mobile No.'%>
-								</div> 
-						</div>
-						<div class="col-sm-6" id="tenant-profile-update">
-							
 							<div class="acadmic-details">		
 								<p class="lead">
 									Acadmic details
@@ -81,19 +74,41 @@
 										<%=f.select :session, options_for_select(@session.all.collect {|c| [ c.year, c.year ] })%>
 									</div>
 								</div>
+								<div>
+									<label>Semester</label>
+									<div class="select-option">
+										<%=f.select :semester, options_for_select(@semester.all.collect {|c| [ c.sem, c.sem ] })%>
+									</div>
+								</div>
 								<div class="input-with-label text-left">
 									<label>Eroll no</label>
 									<%= f.text_field :eroll_no, placeholder: 'Eroll no', maxlength: 12 %>
 								</div>
+								
+
+
+							</div>
+							
+						</div>
+						<div class="col-sm-6" id="tenant-profile-update">
+							
+							
+							<div>
+								<p class="lead">
+									Contact details
+								</p>	
 								<div class="input-with-label text-left">
 									<label>Mobile no</label>
 									<%= f.text_field :mobile_no, placeholder: 'Mobile no', maxlength: 10 %>
 								</div>
-
-
-							</div>
-							<div>
-								
+								<div id="bio-textarea">
+									<label>Father Name</label>
+									<%= f.text_field :father_name, maxlength: 60, placeholder: 'Father Name'%>
+								</div> 
+								<div id="bio-textarea">
+									<label>Father Mobile No.</label>
+									<%= f.text_field :father_mobile_no, maxlength: 10, placeholder: 'Father Mobile No.'%>
+								</div> 
 								<div>
 									<label>Permanent Address</label>
 									<%= f.text_field :p_address, placeholder: 'Address line 1', maxlength: 30 %>
@@ -131,9 +146,8 @@
 	<%#= link_to 'View Profile',   tenant_profile_path(id:profile.id)%>
 </section>		
 <script type="text/javascript">
-	$('#profile_DOB').datepicker({
-    	dateFormat: 'dd-mm-yy'
-	});
+	    $('#profile_DOB').datepicker({
+        format: 'dd-mm-yyyy'   });
 	$('#profile_p_address').show_char_limit({ status_element: '.status', status_style: 'chars_left' } );
 </script>
 

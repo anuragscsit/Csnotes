@@ -17,6 +17,7 @@ class ProfileController < ApplicationController
      @branch = Branch.all
      @session = Session.all
     @profile = current_user.profile
+     @semester = Semester.all
   end
   def update
     @user = current_user
@@ -37,7 +38,7 @@ class ProfileController < ApplicationController
   private
   def profile_params
    params.require(:profile).permit(:first_name,:last_name,:mobile_no,
-   	:DOB,:sex,:eroll_no,:branch, :session,:father_name,:father_mobile_no,
+   	:DOB,:sex,:eroll_no,:branch, :session, :sem, :father_name,:father_mobile_no,
     :p_address,:p_city,:p_state,:p_pincode,:c_address
     )
   end

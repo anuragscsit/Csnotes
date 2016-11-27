@@ -18,4 +18,5 @@
 //= require SmoothScroll
 //= require jquery.magnific-popup
 //= require scrollreveal
+//= require bootstrap-datepicker
 //= require_tree .

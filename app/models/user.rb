@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   after_create :send_signup_mail
   
   	has_one :profile
+    has_one :branch
 
     def send_signup_mail
       UserMailer.signup_mail(self).deliver
