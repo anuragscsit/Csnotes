@@ -38,7 +38,7 @@ class ProfileController < ApplicationController
   private
   def profile_params
    params.require(:profile).permit(:first_name,:last_name,:mobile_no,
-   	:DOB,:sex,:eroll_no,:branch,:semester, :session, :sem, :father_name,:father_mobile_no,
+   	:DOB,:sex,:eroll_no,:branch,:semester, :session, :father_name,:father_mobile_no,
     :p_address,:p_city,:p_state,:p_pincode,:c_address
     )
   end

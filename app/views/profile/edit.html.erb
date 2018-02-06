@@ -1,4 +1,4 @@
-<section class="bg-primary">
+<section class="bg-custom">
 	<h3 class="text-center">My profile</h3> 
 	<div class="section-edit">
 		<div class="container">
@@ -25,17 +25,17 @@
 								<p class="lead">
 									Personal details
 								</p>	
-								<div id="bio-textarea">
+								<div id="first-name">
 									<label>First Name</label>
-									<%= f.text_field :first_name, maxlength: 25%>
+									<%= f.text_field :first_name, maxlength: 25, required: 'true'%>
 								</div>
 								<div id="bio-textarea">
 									<label>Last Name</label>
-									<%= f.text_field :last_name, maxlength: 20%>
+									<%= f.text_field :last_name, maxlength: 20, required: 'true'%>
 								</div>							
 								<div class="input-with-label text-left">
 									<label>Date of birth</label>
-									<%= f.text_field :DOB, placeholder: 'DOB' %>
+									<%= f.text_field :DOB, placeholder: 'DOB', required: 'true' %>
 								</div>
 								<div class="row">
 									<div class="col-sm-12">
@@ -82,7 +82,7 @@
 								</div>
 								<div class="input-with-label text-left">
 									<label>Eroll no</label>
-									<%= f.text_field :eroll_no, placeholder: 'Eroll no', maxlength: 12 %>
+									<%= f.text_field :eroll_no, placeholder: 'Eroll no', maxlength: 12 , required: 'true'%>
 								</div>
 								
 
@@ -99,37 +99,37 @@
 								</p>	
 								<div class="input-with-label text-left">
 									<label>Mobile no</label>
-									<%= f.text_field :mobile_no, placeholder: 'Mobile no', maxlength: 10 %>
+									<%= f.text_field :mobile_no, placeholder: 'Mobile no', maxlength: 10 , required: 'true'%>
 								</div>
 								<div id="bio-textarea">
 									<label>Father Name</label>
-									<%= f.text_field :father_name, maxlength: 60, placeholder: 'Father Name'%>
+									<%= f.text_field :father_name, maxlength: 60, placeholder: 'Father Name', required: 'true'%>
 								</div> 
 								<div id="bio-textarea">
 									<label>Father Mobile No.</label>
-									<%= f.text_field :father_mobile_no, maxlength: 10, placeholder: 'Father Mobile No.'%>
+									<%= f.text_field :father_mobile_no, maxlength: 10, placeholder: 'Father Mobile No.', required: 'true'%>
 								</div> 
 								<div>
 									<label>Permanent Address</label>
-									<%= f.text_field :p_address, placeholder: 'Address line 1', maxlength: 30 %>
+									<%= f.text_field :p_address, placeholder: 'Address line 1', maxlength: 30 , required: 'true'%>
 									<!-- <p>Characters remaining: <span class='status'></span></p> -->
 								</div> 
 								<div class="input-with-label text-left">
 									<label>City</label>
-									<%= f.text_field :p_pincode, placeholder: 'City' %>
+									<%= f.text_field :p_city, placeholder: 'City' , required: 'true'%>
 								</div> 
 								<div class="input-with-label text-left">
 									<label>State</label>
-									<%= f.text_field :p_pincode, placeholder: 'State' %>
+									<%= f.text_field :p_state, placeholder: 'State', required: 'true' %>
 								</div>  
 								
 								<div class="input-with-label text-left">
 									<label>Pin code</label>
-									<%= f.text_field :p_pincode, placeholder: 'pincode' %>
+									<%= f.text_field :p_pincode, placeholder: 'pincode', required: 'true' %>
 								</div> 
 								<div>
 									<label>Current Address</label>
-									<%= f.text_field :p_address, placeholder: 'Current Address' %>
+									<%= f.text_field :c_address, placeholder: 'Current Address', required: 'true' %>
 								</div> 
 							</div>
 
